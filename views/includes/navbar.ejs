@@ -14,7 +14,7 @@
                     <a class="nav-link" href="/outing/newouting">
                         <i class="fa-solid fa-ticket"></i>Apply Outing</a>
                 </li>
-                <% if(!currUser.room){ %>
+                <% if(currUser && !currUser.room){ %>
                     <li class="nav-item" id="item3">
                         <a class="nav-link" href="/room/avalilableRooms"><i class="fa-regular fa-id-badge"></i>Rooms available</a>
                     </li>

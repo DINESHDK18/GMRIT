@@ -82,6 +82,8 @@ const sessionOptions={
 
 
 
+
+
 app.use(flash());
 app.use(session(sessionOptions));
 
@@ -113,13 +115,11 @@ passport.use("student-local",new LocalStrategy(Student.authenticate()));
 passport.use("warden-local",new LocalStrategy(Warden.authenticate()));
 
 
-
-
-
 app.use((req,res,next)=>{
     res.locals.success=req.flash("success");
     res.locals.error=req.flash("error");
     res.locals.currUser=req.user;
+  
     if(req.user){
         res.locals.userType=req.user.constructor.modelName.toLowerCase();
     }else{
@@ -127,7 +127,6 @@ app.use((req,res,next)=>{
     }
     next();
 });
-
 
 
 app.get("/",(req,res)=>{
