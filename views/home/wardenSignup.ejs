@@ -1,0 +1,53 @@
+<% layout("layouts/boilerplate.ejs") %>
+<% block('head').append('<link rel="stylesheet" href="/css/wardensignup.css">') %>
+
+
+
+<!-- <form >
+    <label for="username" >username : </label>
+    <input type="text" id="username" /><br>
+    <label for="password" >password : </label>
+    <input type="password" id="password" /><br>
+    <label for="email" >email : </label>
+    <input type="email" id="email" ><br>
+    <label for="tel" >Phone : </label>
+    <input type="tel" id="tel"  /><br>
+    <button>Submit</button>
+</form> -->
+
+<div class="applyOuting" >
+    <h1 class="applyOuting-heading">Login</h1>
+    <div class="applyOuting-card">
+        <form class="form" action="/warden/signup" method="POST">
+            <div class="mb-3">
+                <label for="username">User Name</label>
+                <input type="text" id="username" class="form-control" placeholder="Enter your username"  name="warden[username]" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="password">Password:</label>
+            <input type="password" id="password" class="form-control" placeholder="Enter your password"  name="password" required >
+            </div>
+            <div class="mb-3">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email"  name="warden[email]" required/>
+            </div>
+            <div class="mb-3">
+                <label for="Phone">Phone</label>
+                <input type="tel" id="phone" class="form-control" name="warden[phone]" required>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary">Submit</button>
+    
+            </div>
+            
+        </form>
+    </div>
+</div>
+
+
+<script>
+    const item=document.getElementById("item4");
+    item.classList.add("active");
+</script>
+<% block('footer').append("") %>

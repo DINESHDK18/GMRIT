@@ -1,0 +1,46 @@
+<% layout("layouts/boilerplate.ejs") %>
+<% block('head').append('<link rel="stylesheet" href="/css/student.css">') %>
+
+<h1>Student Page</h1>
+
+
+<div class="card color-card">
+   <br>
+    <h1 class="title"><b><%= student.jntu_no%></b> </h1>
+    <!-- <p class="job-title"> Jntu-number:-</p> -->
+    <div class="desc top">
+        <h3>ID:<%= student.username %></h3>
+        <h3>Year:<%= student.year %></h3>
+        <h3>Email:<%= student.email %></h3>
+        <h3>ph-no:<%= student.phone %></h3>
+        <h3>parent email:<%= student.parentEmail %></h3>
+        <% if(student.room){ %>
+            <h3>room:<%= student.room.roomNo%></h3>
+        <% } %>
+        <h3>Outings:
+       
+        <div class="outings">
+
+            <% for(let i=0;i<student.outings.length;i++){ %>
+                <div class="outing">
+                    <div class="outing-id"><%= student.outings[i]._id %></div>
+                    <% if( student.outings[i].status=="Accept"){ %>
+                        <div class="outing-status btn-success"><%= student.outings[i].status %></div>
+                    <% }else if( student.outings[i].status=="Reject"){ %>
+                        <div class="outing-status btn-danger"><%= student.outings[i].status %></div>
+                    <% }else{ %>
+                        <div class="outing-status btn-warning"><%= student.outings[i].status %></div>
+                    <% } %>
+                </div>
+            <% } %>
+            
+        </div>
+
+
+    </div>
+  
+<script>
+    const item1=document.getElementById("item5");
+    item1.classList.add("active");
+</script>
+<% block('footer').append("") %>

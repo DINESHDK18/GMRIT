@@ -1,0 +1,13 @@
+.students{
+    display: flex;
+    flex-direction: column;
+}
+.student{
+    width: 100%;
+    background-color: aquamarine;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    font-size: 2rem;
+    color: black;
+    text-decoration: none;
+}

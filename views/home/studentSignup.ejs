@@ -1,0 +1,52 @@
+<% layout("layouts/boilerplate.ejs") %>
+<% block('head').append('<link rel="stylesheet" href="/css/wardensignup.css">') %>
+
+
+
+<div class="applyOuting-card" >
+    
+    <form class="form" action="/student/signup" method="POST">
+      <div class="mb-3">
+          <label for="username">Student ID</label>
+          <input type="text" id="username" class="form-control" placeholder="Enter your ID" name="student[username]" required>
+      </div>
+      <div class="mb-3">
+        <label for="year">Year</label>
+        <input type="text" id="year" class="form-control"  placeholder="Year" name="student[year]" required>
+    </div>
+      <div class="mb-3">
+        <label for="semail">Email</label>
+        <input type="text" id="semail" class="form-control" placeholder="Email" name="student[email]" required>
+    </div>
+      <div class="mb-3">
+        <label for="JntuNo">Full Name</label>
+        <input type="text" id="Jntu No" class="form-control" placeholder="name" name="student[jntu_no]" required>
+    </div>
+    
+      <div class="mb-3">
+          <label for="password">Password:</label>
+      <input type="password" id="password" class="form-control" placeholder="Enter your password" id="b" name="password" required>
+      </div>
+      <div class="mb-3">
+        <label for="Phone">Phone</label>
+        <input type="text" id="phone" class="form-control" placeholder="Enter phone number" name="student[phoneNo]" required>
+      </div>
+      <div class="mb-3">
+          <label for="email">Parent Email</label>
+          <input type="email" id="email" class="form-control"  placeholder="parent-Email" name="student[parentEmail]" required>
+      </div>
+      <div class="text-center">
+          <button class="btn btn-primary">Submit</button>
+
+      </div>
+      
+  </form>
+
+ </div>
+
+ <script>
+    const item=document.getElementById("item4");
+    item.classList.add("active");
+</script>
+
+<% block('footer').append("") %>

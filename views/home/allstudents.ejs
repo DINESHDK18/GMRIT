@@ -1,0 +1,48 @@
+<% layout("layouts/boilerplate.ejs") %>
+<% block('head').append('') %>
+<link rel="stylesheet" href="/css/allstudents.css">
+
+
+
+<section>
+    <h1>All Students Page:</h1>  
+    <div class="grid-container">
+
+       
+            <% for(let i=0;i<students.length;i++){ %>
+                <div class="grid-item">
+                    <div class="grid-item-content">
+                      <h3><%= students[i].username %></h3>
+                      <h4><%= students[i].jntu_no  %></h4>
+                      <a href="/student/<%= students[i]._id %>">About
+                        <svg height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M-838-2232H562v3600H-838z" fill="none" />
+                          <path d="M16 10v28l22-14z" />
+                          <path d="M0 0h48v48H0z" fill="none" />
+                        </svg>
+                      </a>
+                    </div>
+                </div>
+            <% } %>
+     
+        
+      
+     
+      
+    
+    </div>
+</section>
+
+<script>
+    const item1=document.getElementById("item2");
+    item1.classList.add("active");
+
+    const cards = document.querySelectorAll(".grid-item");
+    cards.forEach((item) => {
+        item.addEventListener("mouseover", () => {
+            cards.forEach((el) => el.classList.remove("active"));
+            item.classList.add("active");
+        });
+    });
+</script>
+<% block('footer').append("") %>

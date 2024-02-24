@@ -1,0 +1,43 @@
+<% layout("layouts/boilerplate.ejs") %>
+<% block('head').append('<link rel="stylesheet" href="/css/student.css">') %>
+<% block('head').append('<link rel="stylesheet" href="/css/room.css">') %>
+
+
+<h1>Room Page</h1>
+
+<div class="card color-card">
+    <br>
+    <h1 class="title"><b><%= %></b> </h1>
+    <!-- <p class="job-title"> Jntu-number:-</p> -->
+    <div class="desc top">
+        <h3>Hoster Block:<%=room.hosterBlock  %></h3>
+        <h3>Floor No:<%= room.floorNo  %></h3>
+        <h3>Room NO:<%= room.roomNo %></h3>
+        <h3>Type:<%= room.roomType  %></h3>
+        <h3>No of Beds:<%= room.noofStudents  %></h3>
+        
+        <div class="students">
+            <% if(room.allotedStudents && room.allotedStudents.length>0) {%>
+                <h3>Students in Rooms:</h3>
+                <% for(let i=0;i<room.allotedStudents.length;i++){ %>
+                    <a href="/student/<%= room.allotedStudents[i]._id %>">
+                        <div class="student">
+                            <div class="student-id"><%= room.allotedStudents[i].username  %></div>
+                        </div>
+                    </a>
+                    
+                <% } %>
+            <% } %>
+            
+
+           
+        </div>
+        
+     </div>
+   
+ <script>
+     const item1=document.getElementById("item6");
+     item1.classList.add("active");
+ </script>
+
+<% block('footer').append("") %>

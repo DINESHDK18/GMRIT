@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-custom navbar-mainbg">
+    <a class="navbar-brand navbar-logo font-weight-bold" href="/home"><i class="fa-solid fa-hotel mr-2"></i>Hostels</a>
+    <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars text-white"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mr-4">
+            <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+            <li class="nav-item" id="item1">
+                <a class="nav-link" href="/home"><i class="fa-solid fa-house"></i>Home</a>
+            </li>
+            <% if(currUser && userType==="student"){ %>
+                <li class="nav-item" id="item2">
+                    <a class="nav-link" href="/outing/newouting">
+                        <i class="fa-solid fa-ticket"></i>Apply Outing</a>
+                </li>
+                <% if(!currUser.room){ %>
+                    <li class="nav-item" id="item3">
+                        <a class="nav-link" href="/room/avalilableRooms"><i class="fa-regular fa-id-badge"></i>Rooms available</a>
+                    </li>
+                <% } %>
+            <% } %>
+
+            <% if(currUser && userType==="warden"){ %>
+                <li class="nav-item" id="item2">
+                    <a class="nav-link" href="/student/allstudents">
+                        <i class="fa-solid fa-people-group"></i>All Students</a>
+                </li>
+                <li class="nav-item" id="item6">
+                    <a class="nav-link" href="/room/allrooms">
+                        <i class="fa-solid fa-ticket"></i>All Rooms</a>
+                </li>
+                <li class="nav-item" id="item7">
+                    <a class="nav-link" href="/room/newroom">
+                        <i class="fa-solid fa-ticket"></i>New Room</a>
+                </li>
+            <% } %>
+            
+            <% if(currUser && userType==="warden") {%>
+                <li class="nav-item" id="item4">
+                    <a class="nav-link" href="/outing/alloutings"><i class="fa-solid fa-right-to-bracket"></i>outings</a>
+                </li>
+            <% } %>
+
+            <% if(currUser) {%>
+                <li class="nav-item" id="item4">
+                    <a class="nav-link" href="/student/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a>
+                </li>
+            <% }else{ %>
+                <li class="nav-item" id="item4">
+                    <a class="nav-link" href="/loginSection"><i class="fa-solid fa-right-to-bracket"></i>Login</a>
+                </li>
+            <% } %>
+
+            <% if(currUser && userType==="student"){ %>
+                <li class="nav-item" id="item5">
+                    <a class="nav-link" href="/student/<%= currUser._id %>"><i class="fa-solid fa-user"></i>Student</a>
+                </li>
+            <% } %>
+            
+        </ul>
+    </div>
+</nav>
+

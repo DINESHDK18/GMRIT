@@ -1,0 +1,33 @@
+<% layout("layouts/boilerplate.ejs") %>
+<% block('head').append('<link rel="stylesheet" href="/css/availablerooms.css">') %>
+
+<h1>All rooms Page</h1>
+
+
+<div class="d-flex flex-row flex-wrap justify-content-sm-start align-items-center">
+
+    <% for(let i=0;i<rooms.length;i++){ %>
+        <% if(rooms[i].allotedStudents!=null || (rooms[i].allotedStudents && (rooms[i].noofStudents && rooms[i].allotedStudents.length))) {%>
+           
+            <div class="card m-auto " style="margin-top: 1rem !important;">
+                <div class="card-header">
+                <strong class="card-title">Room No:<span id="roomNumber"> <%= rooms[i].roomNo %> </span> <small style="margin-left:8rem">Available Beds:<span class="badge badge-success float-right mt-1 mr-4"><%=(rooms[i].noofStudents-rooms[i].allotedStudents.length)%></span></small></strong>
+                </div>
+                <div class="card-body" style="background-color: #6674cc;">
+                <p class="card-text">Hostel No:<span id="hostelNumber"> <%= rooms[i].hosterBlock %> </span></p>
+                <p class="card-text">Floor No:<span id="floorNumber"><%= rooms[i].floorNo %></span></p>
+                <p class="card-text">Room Type: <span class="room-type ml-3"><%- rooms[i].roomType %></span></p>
+                <a class="btn btn-light" href="/room/<%= rooms[i]._id %>" style="color: #262626;"> Room</a>
+                </div>
+                </div>
+       <% } %>
+    <% } %>
+
+
+</div>
+
+<script>
+    const item1=document.getElementById("item6");
+    item1.classList.add("active");
+</script>
+<% block('footer').append("") %>

@@ -1,0 +1,59 @@
+<% layout("layouts/boilerplate.ejs") %>
+<% block('head').append('<link rel="stylesheet" href="/css/wardensignup.css">') %>
+
+
+<!-- <h1>Outing Page</h1>
+<form >
+    <label for="outdate">Enter your Outing Date :</label>
+    <input type="date" id="outdate"  /><br><br>
+    <label for="outtime">Enter your Outing Time :</label>
+    <input type="time" id="outtime" /><br><br>
+    <label for="indate">Enter your In Date :</label>
+    <input type="date" id="indate"  /><br><br>
+    <label for="intime">Enter your In Time :</label>
+    <input type="time" id="intime" /><br><br>
+    <textarea  cols="30" rows="10"></textarea>
+    <br><br>
+    <button>submit</button>
+</form> -->
+
+<div class="applyOuting" >
+    <h1 class="applyOuting-heading">OUTPASS PROFORMA</h1>
+    <div class="applyOuting-card">
+        <form class="form" action="/outing/newouting" method="POST" >
+            <div class="mb-3">
+                <label for="outdate">Out Date:</label>
+                <input type="date" id="outdate" class="form-control" name="outing[outingDate]" required>
+            </div>
+            <div class="mb-3">
+                <label for="outdate">Out Time:</label>
+                <input type="time" id="outtime" class="form-control" name="outing[outingTime]" required >
+            </div>
+            <div class="mb-3">
+                <label for="outdate">In Date:</label>
+            <input type="date" id="indate" class="form-control" name="outing[inDate]" required >
+            </div>
+            <div class="mb-3">
+                <label for="outdate">In Time:</label>
+            <input type="time" id="intime" class="form-control" name="outing[inTime]" required  >
+            </div>
+            <div class="mb-3">
+                <p>Reason:</p>
+                <textarea rows="10" cols="80" name="outing[reason]" required></textarea>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-light">Submit</button>
+    
+            </div>
+            
+        </form>
+    </div>
+</div>
+
+<script>
+    const item=document.getElementById("item2");
+    item.classList.add("active");
+</script>
+
+
+<% block('footer').append("") %>

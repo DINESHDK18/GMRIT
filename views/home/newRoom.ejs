@@ -1,0 +1,76 @@
+<% layout("layouts/boilerplate.ejs") %>
+<% block('head').append('') %>
+
+<form action="/room/newroom" method="POST" style="width: 75%; margin: auto;">
+    <label for="hostel" class="form-lable">Enter your Hostel Block :</label>
+    <select class="form-select form-control" name="room[hosterBlock]" id="hostel" aria-label="Default select example" required>
+        <option value="1">Block 1</option>
+        <option value="2">Block 2</option>
+        <option value="3">Block 3</option>
+        <option value="4">Block 4</option>
+        <option value="5">Block 5</option>
+     </select>
+      
+            
+    
+        <!-- <label for="hostel1" >Block A</label>
+        <input type="radio" id="hostel1"  required value="1"/><br>
+        <label for="hostel2" >Block B</label>
+        <input type="radio" id="hostel2" name="room[hosterBlock]" required value="2"/><br>
+        <label for="hostel3" >Block C</label>
+        <input type="radio" id="hostel3" name="room[hosterBlock]" required value="3"/><br>
+        <label for="hostel4" >Block D</label>
+        <input type="radio" id="hostel4" name="room[hosterBlock]" required value="4"/><br>
+        <label for="hostel5" >Block E</label>
+        <input type="radio" id="hostel5" name="room[hosterBlock]" required value="5"/><br> -->
+
+   
+    <label for="floor">Enter your Floor Number :</label><br>
+    <select class="form-select form-control" name="room[floorNo]" id="floor" aria-label="Default select example" required>
+        <option value="1">Floor 1</option>
+        <option value="2">Floor 2</option>
+        <option value="3">Floor 3</option>
+        <option value="4">Floor 4</option>
+        <option value="5">Floor 5</option>
+     </select>      
+
+        <!-- <label for="floor1" >floor 1</label>
+        <input type="radio" id="floor1"  required value="1" /><br>
+        <label for="floor2" >floor 2</label>
+        <input type="radio" id="floor2" name="room[floorNo]" required value="1"  /><br>
+        <label for="floor3" >floor 3</label>
+        <input type="radio" id="floor3" name="room[floorNo]" required value="1" /><br>
+        <label for="floor4" >floor 4</label>
+        <input type="radio" id="floor4" name="room[floorNo]" required value="1" /><br> -->
+
+
+    <label for="roomno" class="form-lable">Enter your Room Number :</label>
+    <input type="number" class="form-control" id="roomno" name="room[roomNo]" required   />
+
+    <label  class="form-lable">Select Room Type :</label>
+    <br>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="room[roomType]" required value="AC"  id="inlineRadio1" value="option1">
+        <label class="form-check-label" for="inlineRadio1">AC</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="room[roomType]" required value="NON-AC"  id="inlineRadio2" value="option2">
+        <label class="form-check-label" for="inlineRadio2">NON AC</label>
+    </div>
+    <br>
+        <!-- <label for="floor1" class="form-lable" >AC</label>
+        <input type="radio" class="form-control" id="floor1"  /><br>
+        <label for="floor2" class="form-lable" >Non-AC</label>
+        <input type="radio" class="form-control" id="floor2" name="room[roomType]" required value="NON-AC"  /><br> -->
+    <label for="noofStudents" class="form-lable">Enter no of No of Students:</label><br>
+    <input type="number" id="noofStudents" class="form-control" name="room[noofStudents]" required><br>
+
+    <button class="btn  btn-primary">Submit</button>
+</form>
+
+<script>
+    const item=document.getElementById("item7");
+    item.classList.add("active");
+</script>
+
+<% block('footer').append("") %>

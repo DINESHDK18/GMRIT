@@ -1,0 +1,29 @@
+<% layout("layouts/boilerplate.ejs") %>
+<% block('head').append('<link rel="stylesheet" href="/css/outing.css">') %>
+
+<div class="outingsWardenPage-bg-container">
+    <div class="card">
+        <p class="student-name">ID:<span id="studentId"><%= outing.student.username %></span></p>
+        <p class="student-name">Name:<span id="jntuNo"><%= outing.student.jntu_no %></span></p>
+        <p class="student-name">Out date:<span id="outdate"><%= outing.outDate %></span></p>
+        <p class="student-name">Out Time:<span id="outtime"></span><%= outing.outTime %></p>
+        <p class="student-name">In date:<span id="inDate"><%= outing.inDate %></span></p>
+        <p class="student-name">In Time:<span id="inTime"></span><%= outing.inTime %></p>
+        <p class="student-name">Reason:<span id="Reason"><%= outing.reason %></span></p>
+        <div class="d-flex flex-row ">
+            <form action="/outing/<%= outing._id %>/accept" method="POST">
+                <button class="btn btn-success">Accept</button>
+            </form>
+            <form action="/outing/<%= outing._id %>/reject" method="POST">
+                <button class="btn btn-danger ml-5">Reject</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<script>
+     const item=document.getElementById("item4");
+    item.classList.add("active");
+</script>
+<% block('footer').append("") %>

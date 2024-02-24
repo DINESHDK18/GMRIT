@@ -1,0 +1,15 @@
+<% layout("layouts/boilerplate.ejs") %>
+<% block('head').append('<link rel="stylesheet" href="/css/home.css">') %>
+
+<main class="page-main">
+    <div>
+      <h1>Welcome to Hostel Management System</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, perferendis temporibus aut vel, quasi quam nemo quod maxime ipsa libero sunt facere magnam molestias fugit assumenda veniam unde sit corporis.</p>
+      <p>Choose your selected ones.</p>
+    </div>
+</main>
+<script>
+    const item=document.getElementById("item1");
+    item.classList.add("active");
+</script>
+<% block('footer').append("") %>

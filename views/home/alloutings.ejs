@@ -1,0 +1,26 @@
+<% layout("layouts/boilerplate.ejs") %>
+<% block('head').append('<link rel="stylesheet" href="/css/alloutings.css">') %>
+
+<h1>All Outings</h1>
+
+<div class="outings">
+    <% if(outings.length>0){ %>
+        <% for(let i=0;i<outings.length;i++){ %>
+            <a href="/outing/<%= outings[i]._id %>">
+                <div class="outing">
+                    <div class="outing-sid"><%= outings[i].student.username  %></div>
+                    <div class="outing-id"><%= outings[i]._id %></div>
+                    <div class="outing-status"><%= outings[i].status %></div>
+                </div>
+            </a>
+        <% } %>
+    <% }else{ %>
+        no outings
+    <% } %>
+</div>
+
+
+<script>
+    const item1=document.getElementById("item4");
+    item1.classList.add("active");
+</script>

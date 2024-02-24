@@ -1,0 +1,12 @@
+<% layout("layouts/boilerplate.ejs") %>
+<% block('head').append('') %>
+
+<h1>room register Page</h1>
+
+<div class="room">
+        <%= room %>
+        <form action="/room/<%= room._id %>/register" method="POST">
+            <button>register</button>
+        </form>
+</div>
+
